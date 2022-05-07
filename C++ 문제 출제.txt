@@ -1,0 +1,53 @@
+STL vector 
+벡터 v안에 값을 하나씩 제거하고 벡터가 비었다면, vector empty를 출력하시오
+#include<iostream>
+#include<vector>
+using namespace std;
+int main() {
+	vector<int> v{ 1,2,3,4,5 };
+	for (int i = 0; i < v.capacity(); i++) {
+		cout << v.size() << endl;
+		v.pop_back();
+	}
+	if (v.empty()) {
+		cout << "vector empty!";
+	}
+}
+
+결과
+5
+4
+3
+2
+1
+vector empty!
+----------------------------------------------------------------------------
+STL iterator
+반복자를 통하여 원소 값을 변경시키고 벡터 v 값을 출력하시오
+#include<iostream>
+#include<vector>
+using namespace std;
+int main() {
+	vector<int> v;
+	for (int i = 1; i < 5; i++) {
+		v.push_back(i);
+	}
+	vector<int>::iterator i; //벡터 반복자 선언 
+	for (i = v.begin(); i != v.end(); ++i)
+	{
+		cout << *i << " ";
+	}
+	cout << endl; //현재iterator는 v.end를 가리킴
+	i = v.begin(); // iterator는 v.begin()으로 다시 가리킴
+	//반복자를 통한 원소 값 변경
+	*i = 10;
+	*(i + 1) = 20;
+	for (i = v.begin(); i != v.end(); ++i) {
+		cout << *i << " ";
+	}
+	cout << endl;
+}
+
+결과
+1 2 3 4
+10 20 3 4
