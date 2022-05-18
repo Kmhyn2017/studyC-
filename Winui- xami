@@ -1,0 +1,7 @@
+<StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Button x:Name="myButton" Click="myButton_Click">Click Me</Button>
+        <TextBox x:Name="a"></TextBox>
+        <TextBox x:Name="b"></TextBox>
+        <Button x:Name="Add" Click="myAdd">+</Button>
+        <TextBlock x:Name="c">???</TextBlock>
+    </StackPanel>
